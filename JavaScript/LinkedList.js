@@ -94,19 +94,27 @@ LinkedList.prototype.search = function(searchValue) {
   return null;
 }
 
+LinkedList.prototype.indexOf = function(value) {
+  let indexes = [];
+  let currentIndex = 0;
+  let currentNode = this.head;
+  while (currentNode) {
+    if (currentNode.value === value) {
+      indexes.push(currentIndex);
+    }
+    currentNode = currentNode.next;
+    currentIndex++;
+  }
+  return indexes;
+}
 
 //Test Block
-
 let ll = new LinkedList();
-
-// ll.addToHead(1);
-// ll.addToHead(2);
-// ll.addToHead(3);
-// ll.addToTail(4);
-// ll.addToTail(5);
-
-ll.addToTail(1);
+ll.addToTail(5);
+ll.addToTail(6);
+ll.addToTail(8);
 ll.addToTail(2);
-ll.addToHead(3);
+ll.addToTail(7);
+ll.addToTail(6);
 
-console.log(ll.search(2));
+console.log(ll.indexOf(6));
