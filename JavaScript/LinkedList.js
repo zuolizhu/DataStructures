@@ -83,6 +83,17 @@ LinkedList.prototype.removeTail = function() {
   return val;
 }
 
+//search method
+LinkedList.prototype.search = function(searchValue) {
+  let currentNode = this.head;
+  //travel through list from node to node
+  while (currentNode) {
+    if (currentNode.value === searchValue) return currentNode.value;
+    currentNode = currentNode.next;
+  }
+  return null;
+}
+
 
 //Test Block
 
@@ -98,6 +109,4 @@ ll.addToTail(1);
 ll.addToTail(2);
 ll.addToHead(3);
 
-
-console.log(ll.removeTail());
-console.log(ll);
+console.log(ll.search(2));
