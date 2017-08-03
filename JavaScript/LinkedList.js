@@ -37,7 +37,7 @@ LinkedList.prototype.addToTail = function(value) {
   else {
     this.head = newNode;
   }
-  //Add new Node to the head
+  //Add new Node to the tail
   this.tail = newNode;
 };
 
