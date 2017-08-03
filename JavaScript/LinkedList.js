@@ -1,3 +1,15 @@
+//Big O
+//-Adding/removing head and tail
+  // Constant Time - O(1)
+//-Searching through LinkedList
+  // Linear Time - O(n)
+// Commonly use in Online gaming(Poker, board games, dominoes)
+
+//Memory Management Benefits:
+  //**Data doesnot have to be stored together
+
+
+
 //LinkedList Constructor
 function LinkedList() {
   this.head = null;
