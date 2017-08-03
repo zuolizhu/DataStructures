@@ -42,11 +42,18 @@ LinkedList.prototype.addToTail = function(value) {
 };
 
 
+//Test Block
+
 let ll = new LinkedList();
 
-ll.addToHead(1);
-ll.addToHead(2);
-ll.addToHead(3);
-ll.addToTail(4);
-ll.addToTail(5);
-console.log(ll);
+// ll.addToHead(1);
+// ll.addToHead(2);
+// ll.addToHead(3);
+// ll.addToTail(4);
+// ll.addToTail(5);
+
+ll.addToTail(1);
+ll.addToTail(2);
+ll.addToTail(3);
+
+console.log(ll.tail.prev.prev);
