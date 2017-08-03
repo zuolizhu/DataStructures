@@ -41,6 +41,28 @@ LinkedList.prototype.addToTail = function(value) {
   this.tail = newNode;
 };
 
+//removeHead method
+LinkedList.prototype.removeHead = function() {
+  //If the list is empty
+  if (!this.head) {
+    return null;
+  }
+  //Save the value in the head node into a variable
+  //So you can know which value you removed using
+  //console.log(ll.removeHead())
+  let val = this.head.value;
+  //Rewired the pointer and remove the head node
+  this.head = this.head.next;
+  if (this.head) {
+    this.head.prev = null;
+  }
+  else {
+    this.tail = null;
+  }
+  return val;
+}
+
+
 
 //Test Block
 
@@ -54,6 +76,9 @@ let ll = new LinkedList();
 
 ll.addToTail(1);
 ll.addToTail(2);
-ll.addToTail(3);
+ll.addToHead(3);
 
-console.log(ll.tail.prev.prev);
+ll.removeHead();
+
+console.log(ll);
+console.log(ll.removeHead());
