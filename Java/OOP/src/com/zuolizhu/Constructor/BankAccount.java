@@ -6,6 +6,10 @@ public class BankAccount {
     private String customerName;
     private String customerEmail;
     private String phoneNumber;
+    public BankAccount() {
+        this("0000-0000-000x",120000,"Default Name", "dn@zz.com","123321");
+        System.out.println("Empty constructor called. Let me set default info for you :D ");
+    }
 
     public BankAccount(String accountNumber, double balance, String customerName, String customerEmail, String phoneNumber) {
         this.accountNumber = accountNumber;
