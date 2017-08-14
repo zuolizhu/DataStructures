@@ -22,4 +22,14 @@ public class Canon extends Camera {
         recordVideo();
         super.takePicture();
     }
+
+    public void imageRaw() {
+        System.out.println("Image in Raw quality!");
+        imageQuality(3000);
+    }
+
+    public void imageJPG() {
+        System.out.println("Image in JPG quality!");
+        imageQuality(1000);
+    }
 }

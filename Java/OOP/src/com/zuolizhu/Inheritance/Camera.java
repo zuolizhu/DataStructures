@@ -17,6 +17,10 @@ public class Camera {
         System.out.println("Camera take picture!");
     }
 
+    public void imageQuality(int resolution) {
+        System.out.println("Image resolution is " + resolution);
+    }
+
     public String getType() {
         return type;
     }
