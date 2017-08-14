@@ -40,5 +40,6 @@ HashTable.prototype.insert = function(key, value) {
 let myHT = new HashTable(30);
 
 myHT.insert('Zuoli', 'Zuolizhu5960x@gmail.com');
+myHT.insert('Zuoli', 'zzh9@albany.edu');
 
 console.log(myHT.buckets);
