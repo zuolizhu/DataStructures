@@ -19,8 +19,21 @@ HashTable.prototype.hash = function(key) {
   }
   let bucket = total % this.numBuckets;
   return bucket;
-}
+};
 
+//Insert method
+HashTable.prototype.insert = function(key, value) {
+  //Hash the key and figured out what bucket to put into null node in
+  let index = this.hash(key);
+  if (!this.buckets[index]) this.buckets[index] = new HashNode(key, value);
+  else {
+    let currentNode = this.buckets[index];
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = new HashNode(key, value);
+  }
+};
 
 
 
