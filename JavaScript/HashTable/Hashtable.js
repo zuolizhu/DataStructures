@@ -81,8 +81,8 @@ let myHT = new HashTable(30);
 
 myHT.insert('Zuoli', 'Zuolizhu5960x@gmail.com');
 myHT.insert('Joe', 'Joe@outlook.com');
-myHT.insert('Kay', 'Ka@yahho.com');
+myHT.insert('Ka', 'Ka@yahho.com');
 myHT.insert('Mega', 'mg@hotmail.com');
 myHT.insert('Omi', 'om@twitter.com');
-myHT.insert('Biu', 'biu@bb.com');
+myHT.insert('Papapa', 'papapa@bb.com');
 console.log(myHT.retrieveAll());
