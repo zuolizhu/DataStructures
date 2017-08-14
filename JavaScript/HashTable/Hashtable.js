@@ -43,6 +43,7 @@ HashTable.prototype.insert = function(key, value) {
   }
 };
 
+//get method
 HashTable.prototype.get = function(key) {
   let index = this.hash(key);
   if (!this.buckets[index]) return null;
@@ -57,6 +58,19 @@ HashTable.prototype.get = function(key) {
   }
 };
 
+//retrieveAll method
+HashTable.prototype.retrieveAll = function() {
+  let allNodes = [];
+  for(let i = 0; i < this.numBuckets; i++) {
+    let currentNode = this.buckets[i];
+    while (currentNode) {
+      allNodes.push(currentNode);
+      currentNode = currentNode.next;
+    }
+  }
+  return allNodes;
+};
+
 
 
 
@@ -66,8 +80,9 @@ HashTable.prototype.get = function(key) {
 let myHT = new HashTable(30);
 
 myHT.insert('Zuoli', 'Zuolizhu5960x@gmail.com');
-myHT.insert('Zuoli', 'zzh9@albany.edu');
-myHT.insert('Zuloi', 'zuolizhu4960x@gmail.com');
-
-console.log(myHT.buckets);
-console.log(myHT.get('Zuoli'));
+myHT.insert('Joe', 'Joe@outlook.com');
+myHT.insert('Kay', 'Ka@yahho.com');
+myHT.insert('Mega', 'mg@hotmail.com');
+myHT.insert('Omi', 'om@twitter.com');
+myHT.insert('Biu', 'biu@bb.com');
+console.log(myHT.retrieveAll());
