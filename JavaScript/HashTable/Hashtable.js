@@ -43,11 +43,31 @@ HashTable.prototype.insert = function(key, value) {
   }
 };
 
+HashTable.prototype.get = function(key) {
+  let index = this.hash(key);
+  if (!this.buckets[index]) return null;
+  else {
+    let currentNode = this.buckets[index];
+    while (currentNode) {
+      if (currentNode.key === key) return currentNode.value;
+      //Travel through every node in this bucket
+      currentNode = currentNode.next;
+    }
+    return null;
+  }
+};
+
+
+
+
+
 
 
 let myHT = new HashTable(30);
 
 myHT.insert('Zuoli', 'Zuolizhu5960x@gmail.com');
 myHT.insert('Zuoli', 'zzh9@albany.edu');
+myHT.insert('Zuloi', 'zuolizhu4960x@gmail.com');
 
 console.log(myHT.buckets);
+console.log(myHT.get('Zuoli'));
