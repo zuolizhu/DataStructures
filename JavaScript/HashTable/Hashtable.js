@@ -26,9 +26,17 @@ HashTable.prototype.insert = function(key, value) {
   //Hash the key and figured out what bucket to put into null node in
   let index = this.hash(key);
   if (!this.buckets[index]) this.buckets[index] = new HashNode(key, value);
+  //Check the first node in the bucket
+  else if (this.buckets[index].key === key) {
+    this.buckets[index].value = value;
+  }
   else {
     let currentNode = this.buckets[index];
     while (currentNode.next) {
+      if (currentNode.next.key === key) {
+        currentNode.next.value = value;
+        return;
+      }
       currentNode = currentNode.next;
     }
     currentNode.next = new HashNode(key, value);
