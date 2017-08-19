@@ -1,5 +1,6 @@
 package com.zuolizhu.ArrayList;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -35,10 +36,28 @@ public class Main {
                     searchItem();
                     break;
                 case 6:
+                    processArrayList();
+                    break;
+                case 7:
                     quit = true;
                     break;
             }
         }
+    }
+r
+
+
+    //Another way to copy one arraylist to another
+    private static void processArrayList() {
+        ArrayList<String> newArray = new ArrayList<>();
+        newArray.addAll(groceryList.getGroceryList());
+        //Might be the easiest way to copy list
+        ArrayList<String> nextArray = new ArrayList<>(groceryList.getGroceryList());
+
+        //3rd way to copy array
+        String[] myArray = new String[groceryList.getGroceryList().size()];
+        myArray = groceryList.getGroceryList().toArray(myArray);
+
     }
 
     private static void printGroceryList() {
@@ -48,7 +67,7 @@ public class Main {
     private static void searchItem() {
         System.out.print("Enter item name: ");
         String searchItem = scanner.nextLine();
-        if(groceryList.findItem(searchItem) != null) {
+        if(groceryList.existItem(searchItem)) {
             System.out.println("Found " + searchItem + " in your list.");
         } else {
             System.out.println(searchItem + " is not in your list.");
@@ -57,18 +76,16 @@ public class Main {
 
     private static void deleteItem() {
         System.out.print("Enter item number: ");
-        int itemNo = scanner.nextInt();
-        scanner.nextLine();
-        groceryList.removeGroceryItem(itemNo - 1);
+        String itemName = scanner.nextLine();
+        groceryList.removeGroceryItem(itemName);
     }
 
     private static void modifyItem() {
-        System.out.print("Enter item number: ");
-        int itemNo = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Enter item name: ");
+        String itemName = scanner.nextLine();
         System.out.print("Enter replacement item: ");
         String newItem = scanner.nextLine();
-        groceryList.modifyGroceryItem(itemNo, newItem);
+        groceryList.modifyGroceryItem(itemName, newItem);
     }
 
     private static void addItem() {
