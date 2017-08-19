@@ -44,9 +44,7 @@ public class Main {
             }
         }
     }
-r
-
-
+    
     //Another way to copy one arraylist to another
     private static void processArrayList() {
         ArrayList<String> newArray = new ArrayList<>();
