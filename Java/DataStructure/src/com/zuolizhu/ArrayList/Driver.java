@@ -40,6 +40,54 @@ public class Driver {
         }
     }
 
+    private static void searchContact() {
+        System.out.println("Enter the contact name you want to search: ");
+        String name = scanner.nextLine();
+        Contact oldContact = mobilePhone.searchContact(name);
+        if(oldContact == null) {
+            System.out.println("Contact not found.");
+            return;
+        }
+
+        System.out.println("Name: " + oldContact.getName() + " phone number is " + oldContact.getPhoneNumber());
+    }
+
+    private static void removeContact() {
+        System.out.println("Enter the contact name you want to remove: ");
+        String name = scanner.nextLine();
+        Contact oldContact = mobilePhone.searchContact(name);
+        if(oldContact == null) {
+            System.out.println("Contact not found.");
+            return;
+        }
+
+        if(mobilePhone.removeContact(oldContact)) {
+            System.out.println("Successfully removed contact");
+        } else {
+            System.out.println("Error removing contact");
+        }
+    }
+
+    private static void updateContact() {
+        System.out.println("Enter the contact name you want to search: ");
+        String name = scanner.nextLine();
+        Contact oldContact = mobilePhone.searchContact(name);
+        if(oldContact == null) {
+            System.out.println("Contact not found.");
+            return;
+        }
+        System.out.println("Enter new contact name: ");
+        String newName = scanner.nextLine();
+        System.out.print("Enter new contact phone number: ");
+        String newNumber = scanner.nextLine();
+        Contact newContact = Contact.createContact(newName, newNumber);
+        if(mobilePhone.updateContact(oldContact, newContact)) {
+            System.out.println("Successfully updated record");
+        } else {
+            System.out.println("Error updating record");
+        }
+    }
+
     private static void addNewContact() {
         System.out.println("Enter new contact name: ");
         String name = scanner.nextLine();
