@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Drive {
 
-    private static ArrayList<Album> albums = new ArrayList<>();
+    private static List<Album> albums = new ArrayList<>();
 
     public static void main(String[] args) {
         Album album = new Album("Made in the A.M.", "One Direction");
@@ -32,7 +32,7 @@ public class Drive {
         album.addSong("Feelings", 3.14);
         albums.add(album);
 
-        LinkedList<Song> playlist = new LinkedList<>();
+        List<Song> playlist = new ArrayList<>();
         albums.get(0).addToPlayList("Perfect", playlist);
         albums.get(0).addToPlayList("Drag Me Down", playlist);
         albums.get(0).addToPlayList("Hey Angle", playlist);
@@ -49,7 +49,7 @@ public class Drive {
         play(playlist);
     }
 
-    private static void play(LinkedList<Song> playlist) {
+    private static void play(List<Song> playlist) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean forward = true;
@@ -139,7 +139,7 @@ public class Drive {
      * How to use iterator
      * @param playlist
      */
-    private static void printlist(LinkedList<Song> playlist) {
+    private static void printlist(List<Song> playlist) {
         Iterator<Song> iterator = playlist.iterator();
         System.out.println("_________________________________");
         while(iterator.hasNext()) {
