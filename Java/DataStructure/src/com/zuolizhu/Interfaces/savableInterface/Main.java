@@ -18,8 +18,22 @@ public class Main {
         testPlayer.setDamage(120);
         System.out.println(testPlayer);
         saveObject(testPlayer);
-        loadObject(testPlayer);
+//        loadObject(testPlayer);
         System.out.println(testPlayer);
+
+        //Test code for Monster class
+        ISaveable wolf = new Monster("Wolf", 20, 50);
+        /**
+         * wolf.getDamage() will not allowed
+         */
+//        wolf.getDamage();
+        /**
+         * with cast, we can
+         */
+        System.out.println(((Monster) wolf).getDamage());
+
+
+        saveObject(wolf);
 
     }
 
