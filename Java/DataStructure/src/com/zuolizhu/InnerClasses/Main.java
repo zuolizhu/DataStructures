@@ -8,18 +8,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        class ClickListener implements Button.OnClickListener {
-            public ClickListener() {
-                System.out.println("Ive been clicked!");
-            }
+//        class ClickListener implements Button.OnClickListener {
+//            public ClickListener() {
+//                System.out.println("Ive been clicked!");
+//            }
+//
+//            @Override
+//            public void onClick(String title) {
+//                System.out.println(title + " was clicked.");
+//            }
+//        }
+//
+//        btnPrint.setOnClickListener(new ClickListener());
 
+        /**
+         * code below is same as above
+         * This is an anonymous class
+         */
+        btnPrint.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(String title) {
-                System.out.println(title + " was clicked.");
+                System.out.println(title + " was clicked");
             }
-        }
-
-        btnPrint.setOnClickListener(new ClickListener());
+        });
         listen();
     }
 
