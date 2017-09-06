@@ -3,26 +3,15 @@ package com.zuolizhu.InnerClasses;
 public class Main {
     public static void main(String[] args) {
         Gearbox ford = new Gearbox(6);
-        /**
-         * Using inner class with right syntax
-         */
-        Gearbox.Gear first = ford.new Gear(1,11.5);
 
-        /**
-         * This code below does not work
-         * "Not an enclosing class"
-         */
-//        Gearbox.Gear second = new Gearbox.Gear(2,7.5);
-
-        /**
-         * This code blow does not work as well
-         * "Cannot resolve symbol 'Gear'"
-         */
-//        Gearbox.Gear third = new ford.Gear(3,5.5);
-
-
-        System.out.println(first.driveSpeed(1000));
-
+        ford.addGear(1,5.1);
+        ford.addGear(2,10.2);
+        ford.addGear(3, 12.9);
+        ford.operateClutch(true);
+        ford.changeGear(1);
+        System.out.println(ford.wheelSpeed(200));
+        ford.changeGear(2);
+        System.out.println(ford.wheelSpeed(300));
 
     }
 }
