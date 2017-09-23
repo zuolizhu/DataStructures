@@ -6,10 +6,10 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
-        Team newyonkee = new Team("newyonkee");
+        Team<FootballPlayer> newyonkee = new Team<>("newyonkee");
         newyonkee.addPlayer(joe);
-        newyonkee.addPlayer(pat);
-        newyonkee.addPlayer(beckham);
+//        newyonkee.addPlayer(pat);
+//        newyonkee.addPlayer(beckham);
 
         System.out.println(newyonkee.numPlayers());
     }
