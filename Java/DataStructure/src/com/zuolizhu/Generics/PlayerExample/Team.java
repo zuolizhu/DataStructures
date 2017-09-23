@@ -2,7 +2,7 @@ package com.zuolizhu.Generics.PlayerExample;
 
 import java.util.ArrayList;
 
-public class Team<T> {
+public class Team<T extends Player> {
 
     private String teamName;
 
@@ -23,11 +23,11 @@ public class Team<T> {
 
     public boolean addPlayer(T player) {
         if (members.contains(player)) {
-            System.out.println(((Player) player).getName() + " is already on the team");
+            System.out.println(player.getName() + " is already on the team");
             return false;
         } else {
             members.add(player);
-            System.out.println(((Player) player).getName() + " is added for team " + this.teamName);
+            System.out.println(player.getName() + " is added for team " + this.teamName);
             return true;
         }
     }
