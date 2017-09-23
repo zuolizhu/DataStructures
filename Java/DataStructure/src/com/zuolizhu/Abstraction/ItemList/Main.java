@@ -6,12 +6,17 @@ public class Main {
         ZZLinkedList list = new ZZLinkedList(null);
         list.traverse(list.getRoot());
 
-        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        SearchTree tree = new SearchTree(null);
+        tree.traverse(tree.getRoot());
+
+        String stringData = "7 5 4 2 3 6 8 9 1";
 
         String[] data = stringData.split(" ");
         for(String s : data) {
-            list.addItem(new Node(s));
+            tree.addItem(new Node(s));
         }
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
+        tree.addItem(new Node(5));
+        tree.traverse(tree.getRoot());
     }
 }
